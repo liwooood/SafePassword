@@ -1,0 +1,49 @@
+// SafePwdActiveX.idl : ActiveX 控件项目的类型库源。
+
+// 此文件将由 MIDL 编译器工具处理以
+// 产生类型库(SafePwdActiveX.tlb)，该类型库将成为
+// SafePwdActiveX.ocx.
+
+#include <olectl.h>
+#include <idispids.h>
+
+[ uuid(1383FB43-B727-494A-ACF5-10DD1B301689), version(1.0),
+  control ]
+library SafePwdActiveXLib
+{
+	importlib(STDOLE_TLB);
+
+	//  CSafePwdActiveXCtrl 的主调度接口
+	[ 
+		uuid(F684383E-5C9B-4096-955C-7F98DA3EAA68)	
+	]
+	dispinterface _DSafePwdActiveX
+	{
+		properties:
+		methods:
+	};
+
+	//  CSafePwdActiveXCtrl 的事件调度接口
+
+	[ 
+		uuid(472196CC-E84A-4005-B36D-C7E638825113)	
+	]
+	dispinterface _DSafePwdActiveXEvents
+	{
+		properties:
+			//  事件接口没有任何属性
+
+		methods:
+	};
+
+	//  CSafePwdActiveXCtrl 的类信息
+	[
+		uuid(695D9AFC-099C-44FE-9E79-293A449421F0)
+	]
+	coclass SafePwdActiveX
+	{
+		[default] dispinterface _DSafePwdActiveX;
+		[default, source] dispinterface _DSafePwdActiveXEvents;
+	};
+
+};
