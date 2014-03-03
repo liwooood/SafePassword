@@ -1,17 +1,68 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
-    <Filter Include="源文件">
-      <UniqueIdentifier>{4FC737F1-C7A5-4376-A066-2A32D752A2FF}</UniqueIdentifier>
-      <Extensions>cpp;c;cc;cxx;def;odl;idl;hpj;bat;asm;asmx</Extensions>
-    </Filter>
-    <Filter Include="头文件">
-      <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
-      <Extensions>h;hpp;hxx;hm;inl;inc;xsd</Extensions>
-    </Filter>
     <Filter Include="资源文件">
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="NPAPI SDK">
+      <UniqueIdentifier>{7e922484-2352-4f30-8d44-2e2c182a5e83}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="源代码">
+      <UniqueIdentifier>{29208041-7e38-408c-ae1b-5b7b5560d342}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="模块定义文件">
+      <UniqueIdentifier>{15d901a4-44a4-4e3f-a8ab-6b0885f8bccc}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="测试页面">
+      <UniqueIdentifier>{440fc0ca-3950-435e-bca6-118ef286c8a5}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="np_entry.cpp">
+      <Filter>源代码</Filter>
+    </ClCompile>
+    <ClCompile Include="npn_gate.cpp">
+      <Filter>源代码</Filter>
+    </ClCompile>
+    <ClCompile Include="npp_gate.cpp">
+      <Filter>源代码</Filter>
+    </ClCompile>
+    <ClCompile Include="plugin.cpp">
+      <Filter>源代码</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="nprt.def">
+      <Filter>模块定义文件</Filter>
+    </None>
+    <None Include="test.html">
+      <Filter>测试页面</Filter>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="nprt.rc">
+      <Filter>资源文件</Filter>
+    </ResourceCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="npapi_sdk\npapi.h">
+      <Filter>NPAPI SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="npapi_sdk\npfunctions.h">
+      <Filter>NPAPI SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="npapi_sdk\npruntime.h">
+      <Filter>NPAPI SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="npapi_sdk\nptypes.h">
+      <Filter>NPAPI SDK</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h">
+      <Filter>资源文件</Filter>
+    </ClInclude>
+    <ClInclude Include="plugin.h">
+      <Filter>源代码</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

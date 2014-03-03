@@ -28,7 +28,7 @@
     <ConfigurationType>DynamicLibrary</ConfigurationType>
     <UseDebugLibraries>true</UseDebugLibraries>
     <PlatformToolset>v110</PlatformToolset>
-    <CharacterSet>Unicode</CharacterSet>
+    <CharacterSet>MultiByte</CharacterSet>
   </PropertyGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
     <ConfigurationType>DynamicLibrary</ConfigurationType>
@@ -84,12 +84,15 @@
       </PrecompiledHeader>
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;SAFEPWDPLUGIN_EXPORTS;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_WINDOWS;_USRDLL;XP_WIN32;XP_WIN;_X86_;_CRT_SECURE_NO_DEPRECATE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
       <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>./npapi_sdk;</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
       <SubSystem>Windows</SubSystem>
       <GenerateDebugInformation>true</GenerateDebugInformation>
+      <ModuleDefinitionFile>nprt.def</ModuleDefinitionFile>
+      <OutputFile>$(OutDir)\npPwdSafe.dll</OutputFile>
     </Link>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
@@ -143,6 +146,25 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="npn_gate.cpp" />
+    <ClCompile Include="npp_gate.cpp" />
+    <ClCompile Include="np_entry.cpp" />
+    <ClCompile Include="plugin.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="nprt.def" />
+    <None Include="test.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="nprt.rc" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="npapi_sdk\npapi.h" />
+    <ClInclude Include="npapi_sdk\npfunctions.h" />
+    <ClInclude Include="npapi_sdk\npruntime.h" />
+    <ClInclude Include="npapi_sdk\nptypes.h" />
+    <ClInclude Include="plugin.h" />
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
